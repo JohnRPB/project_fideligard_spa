@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from '../logo.svg';
 import '../App.css';
 import Navbar from './Navbar';
-import StockViewer from './StockViewer';
+import StockViewerContainer from '../containers/StockViewerContainer';
 
 const sections = [];
 
@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar sections={sections} colorStyle="navbar-inverse" />
-        <StockViewer />
+        <StockViewerContainer />
         
       </div>
 
