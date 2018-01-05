@@ -11,8 +11,8 @@ const NavbarItem = ({section, active}) => {
   }
 
   return (
-    <li class={`nav-item ${activeState}`}>
-      <a class="nav-link" href={`#${section.title}`}>
+    <li className={`nav-item ${activeState}`}>
+      <a className="nav-link" href={`#${section.title}`}>
         { section.title }
       </a>
     </li>
@@ -21,22 +21,22 @@ const NavbarItem = ({section, active}) => {
 
 const Navbar = ({sections, colorStyle}) => {
   return (
-    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <nav className="navbar navbar-toggleable-md navbar-light bg-faded">
       <button
-        class="navbar-toggler navbar-toggler-right"
+        className="navbar-toggler navbar-toggler-right"
         type="button"
         data-toggle="collapse"
         data-target="#navbarNav"
         aria-controls="navbarNav"
         aria-expanded="false"
         aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon" />
+        <span className="navbar-toggler-icon" />
       </button>
-      <a class="navbar-brand" href="#">
+      <a className="navbar-brand" href="#">
         <img src={logo} className="App-logo"/> {'    '} Fideligard
       </a>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+      <div className="collapse navbar-collapse" id="navbarNav">
+        <ul className="navbar-nav">
           <NavbarItem section={{title:'Home'}} active={true} />
           {sections.map(section => {
             return <NavbarItem section={section} />;

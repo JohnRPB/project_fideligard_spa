@@ -13,12 +13,13 @@ class StockViewerContainer extends Component {
  }
 
   componentDidMount() {
-    fetch(`https://www.quandl.com/api/v3/datatables/WIKI/PRICES?ticker=A&date=1999-11-18%2C1999-11-19%2C1999-11-22&api_key=${API_KEY}`)
+    fetch(`https://www.quandl.com/api/v3/datatables/WIKI/PRICES?ticker=AAPL&date=1999-12-31%2C1999-11-18%2C1999-11-19%2C1999-11-22&api_key=${API_KEY}`)
       .then((response) => {
         return response.json();
       })
       .then((json) => {
         this.props.dispatch(insertStocks(json));
+        console.log(json);
       })
       .catch((err) => {
         console.log(err);
@@ -33,8 +34,10 @@ class StockViewerContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
+  const toReturn = state.insertStocks.datatable 
+  console.log(toReturn);
   return {
-    stocks: state.stocks
+    stocks: state.insertStocks.datatable
   }
 }
 

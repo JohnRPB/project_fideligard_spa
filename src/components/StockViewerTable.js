@@ -5,7 +5,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 const StockViewerTable = ({stocks}) => {
   return (
     <div id="stock_viewer_table">
-      {JSON.stringify(stocks)}
       <table className="table table-striped">
         <thead>
           <tr>
@@ -18,15 +17,15 @@ const StockViewerTable = ({stocks}) => {
           </tr>
         </thead>
         <tbody>
-          {stocks.map(stock => {
+          {stocks.data.map(stock => {
             return (
               <tr>
-                <td />
-                <td />
-                <td />
-                <td />
-                <td />
-                <td />
+                <td>{stock[0]}</td>
+                <td>{stock[3]}</td>
+                <td>{stock[2]}</td>
+                <td>{stock[3]}</td>
+                <td>{stock[4]}</td>
+                <td></td>
               </tr>
             );
           })}
