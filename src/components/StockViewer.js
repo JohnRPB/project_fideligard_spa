@@ -12,7 +12,7 @@ const StockViewer = ({stocks}) => {
           <label>Filter</label>
           <input type="text" name="" />
         </div>
-        <StockViewerTable stocks={stocks} />
+        <StockViewerTable stocks={stocks || []} />
       </div>
     </div>
   );

@@ -11,7 +11,9 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar sections={sections} colorStyle="navbar-inverse" />
-        <StockViewerContainer />
+      {
+        <StockViewerContainer /> 
+      }
         
       </div>
 
