@@ -17,9 +17,8 @@ import {
 } from './actions';
 
 let initialState = {
-  insertStocks: {datatable: {data: []}, displayStocks: []},
+  insertStocks: {byDate: [], dates: []},
   userData: {account: {balance: 300000, stocks: {}}, transactions: []},
-  dateFilter: '',
 };
 let store = createStore(
   stockApp,

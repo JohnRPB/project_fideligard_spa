@@ -3,6 +3,7 @@ export const BUY = "BUY";
 export const SET_DATE_FILTER = "SET_DATE_FILTER";
 export const CHANGE_DISPLAY_STOCKS = "CHANGE_DISPLAY_STOCKS";
 export const INSERT_STOCKS = "INSERT_STOCKS";
+export const SET_SEARCH_FILTER = "SET_SEARCH_FILTER";
 
 // ---------------------------------------------------------
 // Thunks 
@@ -35,27 +36,26 @@ export const setDateFilter = data => {
   };
 };
 
-export const sell = (stock, amount, date) => {
+export const setSearchFilter = data => {
   return {
-    type: SELL,
-    data: {
-      transaction: { 
-        type: SELL,
-        stock: stock.ticker,
-        amount,
-        date
-      },
-      stockPrice: stock.price
-    }
-  }
-}
+    type: SET_SEARCH_FILTER,
+    data
+  };
+};
 
-export const buy = (stock, amount, date) => {
+export const transact = (type, stock, amount, date) => {
+  console.log("------------------- START  -------------------");
+  console.log("type: ", type);
+  console.log("stock: ", stock);
+  console.log("amount: ", amount);
+  console.log("date: ", date);
+  console.log("-------------------- END  --------------------");
+  
   return {
-    type: BUY,
+    type: type,
     data: {
       transaction: { 
-        type: BUY,
+        type: type,
         stock: stock.ticker,
         amount,
         date

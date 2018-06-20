@@ -38,8 +38,8 @@ const Navbar = ({sections, colorStyle}) => {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
           <NavbarItem section={{title:'Home'}} active={true} />
-          {sections.map(section => {
-            return <NavbarItem section={section} />;
+          {sections.map((section, idx) => {
+            return <NavbarItem section={section} key={idx} />;
           })}
         </ul>
       </div>
